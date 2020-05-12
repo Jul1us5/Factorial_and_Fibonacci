@@ -16,24 +16,31 @@ public class Factorial_and_Fibonacci {
     // Fibonacci
     
     public static int Fibonacci() {
-
-         int num1 = 1;
-         int num2 = 1;
-         int plus = 0;
-         System.out.println(1);
-
-        for (int i = 0; i <=i; ++i) {
-            if(plus > 200) {
+        
+        int num1 = 1;
+        int num2 = 1;
+        int sum = 0; 
+        
+        for(int i=1; i<=i; i++) {
+            if(sum > 200) {
                 return num1;
-            }
-            plus = num1 + num2;
+            } 
+            
+            sum = num1 + num2;
             num1 = num2;
-            num2 = plus;
-            System.out.println(num1);
-
+            num2 = sum;
         }
-        return plus;
-    }    
+        return sum;
+    }
+    
+    public static int FibonacciRec(int num){
+	if(num == 0 ||num == 1) {
+            return num;
+        }
+	return FibonacciRec(num-2) + FibonacciRec(num-1);
+	}
+    
+    
     
 
      public static void main(String[] args) {
@@ -51,6 +58,10 @@ public class Factorial_and_Fibonacci {
          
          
          System.out.println("Fibonacci: " + Fibonacci() + " next step over 200");
+         
+         
+	for(int i = 0; i < 10; i++){
+	    System.out.println(FibonacciRec(i));
          
 
         
